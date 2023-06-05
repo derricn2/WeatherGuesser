@@ -71,10 +71,10 @@ h2 {
 
 /* current weather section */
 #current-weather-section {
-
     grid-column: 2 / -1;
-    grid-row: 1 / 3;
-    grid-column: 2 / 2;
+    border: 1px solid #e55e00;
+    box-shadow: 2px 2px 4px;
+    padding: 10px;
 }
 
 #current-weather-info {
@@ -83,7 +83,38 @@ h2 {
     gap: 20px;
 }
 
+#current-weather-details p {
+    margin-bottom: 20px;
+}
+
 /* forecast section */
 #forecast-section {
     grid-column: 2 / 2;
+}
+
+#forecast-info {
+    display: flex;
+    gap: 10px;
+}
+
+#forecast-info div {
+
+    box-shadow: 2px 2px 4px;
+    background-color: #fdd1a5;
+    padding: 10px;
+}
+
+#forecast-info p {
+    margin: 5px;
+    margin-bottom: 20px;
+}
+
+#forecast-info img {
+    width: 50px;
+    height: 50px;
+}
+
+#forecast-info h3 {
+    font-size: 15px;
+    font-weight: bold;
 }

@@ -82,3 +82,56 @@ function updateCurrentWeather(cityName, currentWeather) {
     currentWeatherDetails.appendChild(humidityElement);
     currentWeatherDetails.appendChild(windSpeedElement);
 }
+
+function updateForecast(forecastList) {
+    // HTML element for forecast info
+    var forecastInfoElement = document.querySelector("#forecast-info");
+    // remove previous forecast details
+    forecastInfoElement.innerHTML = "";
+
+    // to limit number of forecast cards
+    var forecastCount = 0;
+
+    // loop forecast list and create HTML elements for each forecast card
+    for (var forecast of forecastList) {
+        forecastCount++;
+        if (forecastCount > 5) {
+            break;
+        }
+
+        // pull required detail from API
+        var forecastDate = forecast.dt_txt;
+        var weatherIcon = forecast.weather[0].icon;
+        var temperature = forecast.main.temp;
+        var humidity = forecast.main.humidity;
+        var windSpeed = forecast.wind.speed;
+
+        // HTML elements for forecast cards
+        var forecastEntry = document.createElement('div');
+
+        var dateElement = document.createElement('p');
+        dateElement.textContent = forecastDate;
+
+        var weatherIconElement = document.createElement('img');
+        weatherIconElement.src = `https://openweathermap.org/img/w/${weatherIcon}.png`;
+
+        var temperatureElement = document.createElement('p');
+        temperatureElement.textContent = `Temperature: ${temperature} °F`;
+
+        var humidityElement = document.createElement('p');
+        humidityElement.textContent = `Humidity: ${humidity}%`;
+
+        var windSpeedElement = document.createElement('p');
+        windSpeedElement.textContent = `Wind Speed: ${windSpeed} mph`;
+
+        // append forecast elements to container
+        forecastEntry.appendChild(dateElement);
+        forecastEntry.appendChild(weatherIconElement);
+        forecastEntry.appendChild(temperatureElement);
+        forecastEntry.appendChild(humidityElement);
+        forecastEntry.appendChild(windSpeedElement);
+
+
+        forecastInfoElement.appendChild(forecastEntry);
+    }
+}
