@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherGuesser</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <Header>
+        <h1>WeatherGuesser</h1>
+    </Header>
+
+    <main>
+        <section id="search-bar">
+            <form id="search-form">
+                <label for="city-input">Search for a city:</label>
+                <input type="text" id="city-input" placeholder="Enter city name here">
+                <button type="submit">Search</button>
+            </form>
+        </section>
+
+        <section id="current-weather-section">
+            <h2></h2>
+            <div id="current-weather-details">
+                <!-- JavaScript will populate current weather here -->
+            </div>
+        </section>
+
+        <section id="forecast-section">
+            <h2>5-Day Forecast:</h2>
+            <div id="forecast-info">
+                <!-- JavaScript will populate 5-day forecast here -->
+            </div>
+        </section>
+
+        <section id="search-history-section">
+            <h2></h2>
+            <ul id="search-history-list">
+                <!-- JavaScript will populate search history here -->
+            </ul>
+        </section>
+    </main>
+
+    <script src="./assets/js/script.js"></script>
+
+</body>
+</html>
