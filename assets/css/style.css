@@ -44,6 +44,34 @@ h2 {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    position: relative;
+}
+
+#search-history-list {
+    left: 0;
+    padding: 5px;
+    list-style: none;
+    max-height: 150px;
+    overflow-y: auto;
+    width: 100%;
+    z-index: 1;
+}
+
+#search-history-list li {
+    border-radius: 4px;
+    padding: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    border: 1px solid #e55e00;
+}
+
+#search-history-list li:hover {
+    background-color: #e55e00;
+    color: #fdd1a5;
+}
+
+#search-form:hover #search-history-list {
+    display: block;
 }
 
 #search-form label {
@@ -72,8 +100,9 @@ h2 {
 /* current weather section */
 #current-weather-section {
     grid-column: 2 / -1;
-    border: 1px solid #e55e00;
-    box-shadow: 2px 2px 4px;
+}
+
+#current-weather-section div {
     padding: 10px;
 }
 
